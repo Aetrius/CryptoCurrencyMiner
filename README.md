@@ -8,7 +8,7 @@
 
 <h3>Encrypted Password</h3>
 <p>Run the openssl tool within Linux to create an encrypted password. 
-Run the following command: #</br>openssl passwd -1 -salt xyz yourpassword<br> 
+Run the following command: #<i><b>openssl passwd -1 -salt xyz yourpassword</b></i>
 in bash to create a hashed password. Replace the password in the file 
 with your own password."</p>
 
