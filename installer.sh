@@ -12,8 +12,8 @@ yum group install -y "Development tools"
 yum install -y autotools-dev autoconf
 yum install -y libcurl3 libcurl4-gnutls-dev
 yum install -y automake
-yum install autoconf libtool
-yum install git automake gcc make curl-devel
+yum install -y autoconf libtool
+yum install -y git automake gcc make curl-devel
 yum install -y autoconf automake gcc-c++ libdb4-cxx libdb4-cxx-devel boost-devel openssl-devel
 
 #Directory navigation
