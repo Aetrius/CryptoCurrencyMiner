@@ -16,6 +16,14 @@ yum install -y autoconf libtool
 yum install -y git automake gcc make curl-devel
 yum install -y autoconf automake gcc-c++ libdb4-cxx libdb4-cxx-devel boost-devel openssl-devel
 
+#Create directory for scripts
+echo "Creating directory for scripts..."
+mkdir /scripts
+
+#Copy downloaded scripts to scripts directory
+cp ./minerCron.txt /scripts
+cp ./miner.sh /scripts
+
 #Directory navigation
 mkdir /downloads
 cd /downloads
@@ -31,7 +39,9 @@ CFLAGS="-march=native"
 make
 make install
 
-#Setup Miner Configuration
-#-u is the username
-#-p is the password. Password is hashed using linux's openssl feature
-minerd -a cryptonight -o stratum+tcp://fcn.pool.minergate.com:45610 -u tylerwbennet@gmail.com -p xybFNxW73x2.M
+#Install cronjob
+cat /scripts/minerCron.txt >> /etc/crontab
+
+#Create startup task
+cat /scripts/miner.sh >> /etc/rc.d/rc.local
+
